@@ -1,16 +1,16 @@
-// Verifica che non ha inserito numeri o spazi vuoti 
 var inputDetected = false;
 do {
     //utente inserisce valore
     var userPrompt = prompt("Inserisci una parola").toLowerCase().trim();
 
+    // Verifica che non ha inserito numeri o spazi vuoti 
     if (promptNotValid(userPrompt)) {
         alert("Non hai inserito un valore valido.")
     } else {
         inputDetected = true;
     }
 
-} while (!inputDetected)
+} while (!inputDetected);
 
 // OUTPUT
 if (isPalindrome(userPrompt)) {
@@ -19,6 +19,30 @@ if (isPalindrome(userPrompt)) {
 } else {
     console.log("La parola/frase che hai inserito: " + userPrompt + " non è palindroma.");
 
+}
+
+console.log(removeSpaces(userPrompt));
+
+//Funzione che rimuove gli spazi dall'input dell'utente 
+function removeSpaces(text) {
+
+    var stringToArray = []
+    for (var i = 0; i < text.length; i++) {
+
+        stringToArray.push(text[i]);
+    }
+
+    var noSpacesText = []
+    for (var j = 0; j < stringToArray.length; j++) {
+
+        if (stringToArray[j] !== " ") {
+            noSpacesText.push(stringToArray[j]);
+        }
+    }    
+
+    var finalString = noSpacesText.join("");
+
+    return finalString;
 }
 
 
