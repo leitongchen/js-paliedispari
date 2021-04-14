@@ -13,7 +13,7 @@ do {
 } while (!inputDetected);
 
 // OUTPUT
-if (isPalindrome(userPrompt)) {
+if (isPalindrome(removeSpaces(userPrompt))) {
     console.log("La parola/frase che hai inserito: " + userPrompt + " è palindroma.");
 
 } else {
@@ -21,7 +21,7 @@ if (isPalindrome(userPrompt)) {
 
 }
 
-console.log(removeSpaces(userPrompt));
+//console.log(removeSpaces(userPrompt));
 
 //Funzione che rimuove gli spazi dall'input dell'utente 
 function removeSpaces(text) {
