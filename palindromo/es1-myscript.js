@@ -1,5 +1,56 @@
-//Creo una funzione che verifica se le parole sono palindrome
-function reverseText(text) {
+// Verifica che non ha inserito numeri o spazi vuoti 
+var inputDetected = false;
+do {
+    //utente inserisce valore
+    var userPrompt = prompt("Inserisci una parola").toLowerCase().trim();
+
+    if (promptNotValid(userPrompt)) {
+        alert("Non hai inserito un valore valido.")
+    } else {
+        inputDetected = true;
+    }
+
+} while (!inputDetected)
+
+// OUTPUT
+if (isPalindrome(userPrompt)) {
+    console.log("La parola/frase che hai inserito: " + userPrompt + " è palindroma.");
+
+} else {
+    console.log("La parola/frase che hai inserito: " + userPrompt + " non è palindroma.");
+
+}
+
+
+//Funzione che verifica se le parole sono palindrome
+function isPalindrome(text) {
+
+    var revertedText = "";
+    for (i = text.length - 1; i >= 0; i--) {
+
+        revertedText += text[i];
+    }
+
+    console.log("La tua parola da destra a sinistra: " + revertedText);
+
+    return revertedText === text;
+}
+
+
+//funzione che varifica la validità del testo inserito
+function promptNotValid(text) {
+
+    if (Number.isNaN(parseInt(text)) && text !== "" && text !== null && text !== undefined) {
+
+        return false;
+    }
+
+    return true;
+}
+
+
+//funzione che capovolge la parola
+/* function reverseText(text) {
 
     if (typeof text !== "string") {
 
@@ -8,48 +59,42 @@ function reverseText(text) {
 
     return text.split("").reverse().join("");
 
-}
+} */
 
-function removeSpaces(text) {
+/* function removeSpaces(text) {
+
 
     text = text.replace(/\s+/g, '');
 
-}
+} */
 
+/* function isPalindrome(text) {
+    // var palindrome = false;
+    if (removeSpaces(userPrompt) === removeSpaces(text)) {
 
-function isPalindrome(text) {
+        return true;
+    }
+    return ""
+} */
 
-
-}
-
-
-var userPrompt = prompt("Inserisci una parola").toLowerCase(); 
-
-
-
+/*
 var textReverse = reverseText(userPrompt);
 
-var palindrome = false; 
+var palindrome = false;
 
 if (removeSpaces(userPrompt) === removeSpaces(textReverse)) {
 
-    palindrome = true; 
+    palindrome = true;
 
 } else {
 
-    palindrome = false; 
+    palindrome = false;
 
 }
 
 console.log(textReverse)
 
-if (palindrome) {
-    console.log("La parola/frase che hai inserito: " + userPrompt + " è palindroma.");
-
-} else {
-    console.log("La parola/frase che hai inserito: " + userPrompt + " non è palindroma.");
-
-} 
+*/
 
 
 
@@ -57,8 +102,3 @@ if (palindrome) {
 
 
 
-//funzione che varifica la validità del testo inserito
-function promptIsValid(text) {
-
-
-}
