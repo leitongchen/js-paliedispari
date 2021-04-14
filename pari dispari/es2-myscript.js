@@ -35,18 +35,13 @@ var aiNumber = randomNumGen();
 var sumNumbers = userNumber + aiNumber;
 
 
-//stabilire se pari o dispari 
+//stabilire quando è pari
 var pari = sumNumbers % 2 === 0;
 
 
 //stabilire il vincitore 
-//var risultato da stabilire con un IF 
-var risultato
-if (pari) {
-    risultato = "pari";
-} else {
-    risultato = "dispari"
-}
+//var risultato stabilito con funzione pariDispari
+var risultato = pariDispari(pari);
 
 
 //OUTPUT
@@ -66,8 +61,16 @@ console.log(output)
 
 
 
+// funzione per stabilire se risultato pari o dispari
 
-//console.log(randomNumGen())
+function pariDispari(testo) {
+   
+    if (testo) {
+        return "pari";
+    } 
+
+    return "dispari"
+}
 
 //Funzione che genera numeri random
 function randomNumGen() {
