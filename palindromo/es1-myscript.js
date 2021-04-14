@@ -55,7 +55,7 @@ function isPalindrome(text) {
         revertedText += text[i];
     }
 
-    console.log("La tua parola da destra a sinistra: " + revertedText);
+    console.log("La tua parola letta da destra a sinistra: " + revertedText);
 
     return revertedText === text;
 }
