@@ -26,23 +26,18 @@ do {
 } while (!inputDetected)
 
 
-
 //numero dell'AI
 var aiNumber = randomNumGen();
 
 //sommare i due numeri 
-
 var sumNumbers = userNumber + aiNumber;
-
 
 //stabilire quando è pari
 var pari = sumNumbers % 2 === 0;
 
-
 //stabilire il vincitore 
 //var risultato stabilito con funzione pariDispari
 var risultato = pariDispari(pari);
-
 
 //OUTPUT
 var output
@@ -50,7 +45,6 @@ if (userChoice === risultato) {
     output = "HAI VINTO!!!"
 } else {
     output = "MI SPIACE HAI PERSO... :'("
-
 }
 
 console.log("Hai scelto " + userChoice.toUpperCase());
@@ -62,7 +56,6 @@ console.log(output)
 
 
 // funzione per stabilire se risultato pari o dispari
-
 function pariDispari(testo) {
    
     if (testo) {
@@ -78,7 +71,6 @@ function randomNumGen() {
     var randomNum = Math.ceil(Math.random() * 5);
 
     return randomNum;
-
 }
 
 //funzione che varifica la validità dei dati
